@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
   <head>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,11 +15,13 @@
 
     <title>GiftingPowerup</title>
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     <%= render 'layouts/header' %>
-    <div class="containter">
-      <%= yield %>
-    </div>
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
     <%= render 'layouts/footer' %>
 
     <!-- Optional JavaScript -->
