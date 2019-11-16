@@ -9,6 +9,11 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
 main > .container {
   padding: 60px 15px 0;
 }
