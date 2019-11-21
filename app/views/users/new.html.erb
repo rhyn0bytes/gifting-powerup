@@ -6,40 +6,34 @@
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Sign up</h5>
-            <%= form_for(@user) do |f| %>
+            <%= form_for @user, url: signup_path, :html => { class: 'form-signin' } do |form| %>
               <%= render 'shared/error_messages' %>
 
               <div class="form-label-group">
-                <%= f.label :name %>
-                <%= f.text_field :name, class: "form-control" %>
+                <%= form.text_field :name, class: 'form-control' %>
+                <%= form.label :name %>
               </div>
 
               <div class="form-label-group">
-                <%= f.label :email %>
-                <%= f.email_field :email, class: "form-control" %>
-              </div>
-
-              <hr>
-
-              <div class="form-label-group">
-                <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control" %>
+                <%= form.email_field :email, class: 'form-control' %>
+                <%= form.label :email %>
               </div>
 
               <div class="form-label-group">
-                <%= f.label :password_confirmation, "Confirm Password" %>
-                <%= f.password_field :password_confirmation, class: "form-control" %>
+                <%= form.password_field :password, class: 'form-control' %>
+                <%= form.label :password %>
               </div>
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              <div class="form-label-group">
+                <%= form.password_field :password_confirmation, class: 'form-control' %>
+                <%= form.label :password_confirmation %>
               </div>
-              <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
-              <a class="d-block text-center mt-2 small" href="#">Sign In</a>
+
+              <%= form.submit "Sign Up", class: "btn btn-lg btn-primary btn-block" %>
+              <a class="d-block text-center mt-2 small" href="#">Already have an account?</a>
               <!--<hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+              <button class="btn btn-lg btn-google btn-block" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
               -->
             <% end %>
           </div>
